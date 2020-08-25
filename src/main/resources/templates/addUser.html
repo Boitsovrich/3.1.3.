@@ -1,0 +1,196 @@
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html lang="ru" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+<!--&lt;!&ndash;    <title>Add User</title>&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+<!--&lt;!&ndash;<br>&ndash;&gt;-->
+<!--&lt;!&ndash;<div align="center">&ndash;&gt;-->
+<!--&lt;!&ndash;    <form action="new" method="POST">&ndash;&gt;-->
+<!--&lt;!&ndash;        <caption>&ndash;&gt;-->
+<!--&lt;!&ndash;            <h2>&ndash;&gt;-->
+<!--&lt;!&ndash;                Add New User&ndash;&gt;-->
+<!--&lt;!&ndash;            </h2>&ndash;&gt;-->
+<!--&lt;!&ndash;        </caption>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <table border="0" cellpadding="5">&ndash;&gt;-->
+<!--&lt;!&ndash;            <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                <td>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <label>User Login</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                </td>&ndash;&gt;-->
+<!--&lt;!&ndash;                <td>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <input type="text" name="login" required="required">&ndash;&gt;-->
+<!--&lt;!&ndash;                </td>&ndash;&gt;-->
+<!--&lt;!&ndash;            </tr>&ndash;&gt;-->
+
+<!--&lt;!&ndash;            <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                <td>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <label>User Password</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                </td>&ndash;&gt;-->
+<!--&lt;!&ndash;                <td>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <input type="text" name="password" required="required">&ndash;&gt;-->
+<!--&lt;!&ndash;                </td>&ndash;&gt;-->
+<!--&lt;!&ndash;            </tr>&ndash;&gt;-->
+
+<!--&lt;!&ndash;            <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                <td>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <label>User Email</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                </td>&ndash;&gt;-->
+<!--&lt;!&ndash;                <td>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <input type="email" name="email">&ndash;&gt;-->
+<!--&lt;!&ndash;                </td>&ndash;&gt;-->
+<!--&lt;!&ndash;            </tr>&ndash;&gt;-->
+
+<!--&lt;!&ndash;            <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;                <td>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <label>User Role</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                </td>&ndash;&gt;-->
+<!--&lt;!&ndash;                <td>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <select multiple size="2" name="role" >&ndash;&gt;-->
+<!--&lt;!&ndash;                        <option value="ROLE_ADMIN">ROLE_ADMIN</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <option selected="selected" value="ROLE_USER">ROLE_USER</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </select>&ndash;&gt;-->
+<!--&lt;!&ndash;                </td>&ndash;&gt;-->
+<!--&lt;!&ndash;            </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;        </table>&ndash;&gt;-->
+<!--&lt;!&ndash;        <button type="submit">Save</button>&ndash;&gt;-->
+<!--&lt;!&ndash;    </form>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns: th="http://www.thymeleaf.org" xmlns:th="http://www.w3.org/1999/xhtml">-->
+<!--<head>-->
+<!--    &lt;!&ndash; Required meta tags &ndash;&gt;-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+
+<!--    &lt;!&ndash; Bootstrap CSS &ndash;&gt;-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"-->
+<!--          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" th:href="@{css/styles.css}"/>-->
+
+<!--    <title>Admin panel</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<header>-->
+<!--    <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #7373ee">-->
+
+<!--        <div class="navbar-brand">Your login is: <b th:inline="text"> [[${#httpServletRequest.remoteUser}]] </b></div>-->
+
+<!--        <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--            <ul class="navbar-nav mr-auto">-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--        <div class="navbar-text"><a th:href="@{/logout}">Logout</a></div>-->
+<!--    </nav>-->
+<!--</header>-->
+
+
+<!--<div class="container-fluid px-0" style="background-color: #ececec">-->
+
+<!--    <div class="row no-gutters vh-100">-->
+
+<!--        <div class="col-md-2  pt-3" style="background-color: #ffffff">-->
+<!--            <ul class="nav flex-column">-->
+<!--                <li class="nav-item">-->
+<!--                    <a href="/admin/adminPanel" class="btn btn-primary btn-md btn-block rounded-0 active text-left"-->
+<!--                       role="button"-->
+<!--                       aria-pressed="true">Admin</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a href="/user/helloPage" class="btn btn-md btn-block rounded-0 active text-left" role="button"-->
+<!--                       aria-pressed="true">User</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+
+<!--        <div class="col-md-10 p-4">-->
+
+<!--            <h1>-->
+<!--                Admin Panel-->
+<!--            </h1>-->
+
+<!--            <div class="tabbable" id="tabs-UsersTable">-->
+<!--                <ul class="nav nav-tabs">-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="#tab1" data-toggle="tab">Users table</a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link active show" href="#tab2" data-toggle="tab2">New User</a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--                <div style="border: 1px solid lightgrey">-->
+<!--                    <div class="tab-content">-->
+<!--                        <div class="tab-pane p-2 pl-4" id="tab1">-->
+<!--                            <h5> All users </h5>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="tab-content">-->
+<!--                        <div class="tab-pane p-2 pl-4" id="newUser">-->
+<!--                            <h5> Add new user </h5>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="container-fluid com-sm-6 p-4" style="background-color: #ffffff">-->
+
+<!--                <form action="new" method="POST">-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="inputLogin" class="col-form-label col-sm-12 text-center">Login</label>-->
+<!--                        <div class="text-center">-->
+<!--                            <input type="text" name="login" required="required" class="form-control" id="inputLogin"-->
+<!--                                   placeholder="Login">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="inputPassword"-->
+<!--                               class="col-form-label col-sm-12 text-center">Password</label>-->
+<!--                        <div class="text-center">-->
+<!--                            <input type="password" name="password" required="required" class="form-control" id="inputPassword"-->
+<!--                                   placeholder="Password">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="inputEmail" class="col-form-label col-sm-12 text-center">Email</label>-->
+<!--                        <div class="text-center">-->
+<!--                            <input type="email" name="email" class="form-control" id="inputEmail"-->
+<!--                                   placeholder="Email">-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="form-group">-->
+<!--                        <label for="inputEmail" class="col-form-label col-sm-12 text-center">Roles</label>-->
+<!--                        <div class="text-center">-->
+<!--                            <select class="form-control" multiple size="2" name="role">-->
+<!--                                <option value="ROLE_ADMIN">ROLE_ADMIN</option>-->
+<!--                                <option selected="selected" value="ROLE_USER">ROLE_USER</option>-->
+<!--                            </select>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="text-center">-->
+<!--                        <button type="submit" class="btn btn-md btn-success">Add New User</button>-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--</div>-->
+
+
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"-->
+<!--        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"-->
+<!--        crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"-->
+<!--        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"-->
+<!--        crossorigin="anonymous"></script>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"-->
+<!--        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"-->
+<!--        crossorigin="anonymous"></script>-->
+<!--</body>-->
+<!--</html>-->
